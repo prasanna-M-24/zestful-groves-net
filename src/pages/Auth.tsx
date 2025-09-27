@@ -69,8 +69,7 @@ const Auth = () => {
         description: "Welcome back!",
       });
 
-      // Redirect will be handled by auth state change in App
-      navigate("/");
+      // Auth state change will handle redirect automatically
     } catch (error) {
       if (error instanceof z.ZodError) {
         toast({
@@ -118,11 +117,8 @@ const Auth = () => {
 
       toast({
         title: "Account created successfully",
-        description: "Please check your email to verify your account.",
+        description: "Please check your email to verify your account before logging in.",
       });
-
-      // Navigate to location capture
-      navigate("/location-capture");
     } catch (error) {
       if (error instanceof z.ZodError) {
         toast({
